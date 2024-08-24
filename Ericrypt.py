@@ -38,4 +38,4 @@ async def decrypt():
 
     return {"decrypted":decrypted}
 
-app.run()
+app.run(host="0.0.0.0")
