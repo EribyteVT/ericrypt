@@ -7,6 +7,8 @@ spec:
   clusterIP: 10.96.46.46
   selector:
     app: ericrypt
+  externalIPs:
+    - 10.111.131.216
   ports:
   - targetPort: 5000
     port: 5000
