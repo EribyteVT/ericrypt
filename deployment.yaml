@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ericrypt
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ericrypt
+    spec:
+      containers:
+        - name: ericrypt
+          image: eribyteofficial/ericrypt
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "yes"
+            - name: ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ericrypt-secrets
+                  key: ENCRYPTION_KEY
+  selector:
+    matchLabels:
+      app: ericrypt
