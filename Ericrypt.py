@@ -9,6 +9,8 @@ from quart import Quart
 app = Quart(__name__)
 
 encryptService = EncryptDecrypt(os.environ.get("ENCRYPTION_KEY"))
+endpointPassword = os.environ.get("ENDPOINT_PASSWORD")
+
 
 @app.route('/')
 async def hello():
@@ -24,10 +26,15 @@ async def encrypt():
 async def decrypt():
     data = await request.get_json()
 
+    if(data["password"] != endpointPassword):
+        print("INCORRECT PASSWORD")
+        return "FORBIDDEN"
+
     to_decrypt = data["encrypted"]
     salt = data["salt"]
     salt = base64.b64decode(salt.encode("utf-8"))
     decrypted = encryptService.decrypt(to_decrypt,salt)
+
 
     return {"decrypted":decrypted}
 
