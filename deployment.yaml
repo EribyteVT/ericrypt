@@ -23,6 +23,11 @@ spec:
                 secretKeyRef:
                   name: ericrypt-secrets
                   key: ENCRYPTION_KEY
+            - name: ENDPOINT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ericrypt-secrets
+                  key: ENDPOINT_PASSWORD
   selector:
     matchLabels:
       app: ericrypt
