@@ -9,7 +9,8 @@
         "templateParams": {
           "APPLICATION_NAME": "ericrypt-stage",
           "SECRET_NAME": "ericrypt-secrets-stage",
-          "ip": "10.111.131.217"
+          "ip": "10.96.46.46",
+          "external-ip": "10.111.131.217"
         }
       }
   
