@@ -1,0 +1,17 @@
+{
+    "envs": [
+      "stage",
+      "prod"
+    ],
+    "configs": [
+      {
+        "env": "stage",
+        "templateParams": {
+          "APPLICATION_NAME": "ericrypt-stage",
+          "SECRET_NAME": "ericrypt-secrets-stage",
+          "ip": "10.111.131.217"
+        }
+      }
+  
+    ]
+  }
