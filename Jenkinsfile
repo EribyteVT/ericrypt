@@ -80,7 +80,7 @@ pipeline {
 
                     kubeconfig(caCertificate: "${cert}", credentialsId: "${cred}", serverUrl: "${url}"){
                         sh 'kubectl apply -f k8s_generated.yaml'
-                        sh "kubectl rollout restart deployment crud-service-$environ"
+                        sh "kubectl rollout restart deployment ericrypt-$environ"
                     }
                 }
 
