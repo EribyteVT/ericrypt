@@ -1,3 +1,8 @@
+
+def selectedEnv = ''
+def templateMap = [:]
+def selectedEnvs = ''
+
 pipeline {
     agent any
 
