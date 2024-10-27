@@ -1,0 +1,28 @@
+{
+    "envs": [
+      "stage",
+      "prod"
+    ],
+    "configs": [
+      {
+        "env": "stage",
+        "templateParams": {
+          "APPLICATION_NAME": "ericrypt-stage",
+          "SECRET_NAME": "ericrypt-secrets-stage",
+          "ip": "10.96.46.47",
+          "external-ip": "10.111.131.217"
+        }
+      },
+
+      {
+        "env": "prod",
+        "templateParams": {
+          "APPLICATION_NAME": "ericrypt-prod",
+          "SECRET_NAME": "ericrypt-secrets-prod",
+          "ip": "10.96.46.46",
+          "external-ip": "10.111.131.216"
+        }
+      }
+  
+    ]
+  }
